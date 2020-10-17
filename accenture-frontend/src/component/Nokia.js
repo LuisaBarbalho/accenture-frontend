@@ -1,16 +1,17 @@
 import React, { useState } from 'react'
 import logo from '../smartphone.png';
 
+import api from '../services/api';
+
 
 export default function Nokia() {
   const [message, setMessage] = useState('');
   const [convertedMsg, setConvertedMsg] = useState('');
 
   async function handleSubmit() {
+    console.log(message);
     api.get('/texto', {
-      params: {
-        text: texto,
-      }
+      data:{"texto": {message}}
     }).then(res => {
       const convertedMsg = res.data;
       console.log(convertedMsg)
