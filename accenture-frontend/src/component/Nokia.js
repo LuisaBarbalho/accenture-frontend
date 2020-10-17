@@ -6,7 +6,17 @@ export default function Nokia() {
   const [message, setMessage] = useState('');
   const [convertedMsg, setConvertedMsg] = useState('');
 
-  
+  async function handleSubmit() {
+    api.get('/texto', {
+      params: {
+        text: texto,
+      }
+    }).then(res => {
+      const convertedMsg = res.data;
+      console.log(convertedMsg)
+    });
+  }
+
 
   return (
     <div className="Wrapper">
@@ -15,7 +25,7 @@ export default function Nokia() {
         <p className="Input">Input: {message}</p>
         Message: {convertedMsg}
       </div>
-      <button className="Enter">Enter</button>
+      <button className="Enter" onClick={handleSubmit}>Enter</button>
       <div className="Container">
         <div className="Row">
           <button onClick={() => setMessage(prevMsg => prevMsg + '1')}>1</button>
