@@ -16,12 +16,69 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-  color:  #9933ff;
 
 }
 
-.App-link {
-  color: #61dafb;
+.Wrapper {
+  position: relative;
+}
+
+.Nokia {
+  position: relative;
+}
+
+.Screen {
+  position: absolute;
+  top: 193px;
+  left: 70px;
+  width: 220px;
+  height: 155px;
+  border-radius: 10px;
+  background: #69be80;
+}
+
+.Input {}
+
+.Enter {
+  position: absolute;
+  top: 370px;
+  left: 120px;
+  width: 120px;
+  height: 50px;
+  border: 4px solid #46577b;
+  box-sizing: border-box;
+  border-radius: 40px 40px 90px 90px;
+  background-color: #01d0fe;
+  color:#46577b;
+  padding-top: 10px;
+  font-weight: bold;
+  padding: 0;
+}
+
+.Container {
+  position: absolute;
+  top: 475px;
+  left: 45px;
+  background: #46577b;
+  border-radius: 40px;
+  padding-bottom: 50px;
+}
+
+.Row {
+  display: flex;
+  justify-content: space-between;
+  padding: 2px;
+}
+
+.Row button {
+  margin: 10px;
+  width: 70px;
+  border: none;
+  padding: 5px;
+  background-color: #b3b3b3;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 14px;
 }
 
 @keyframes App-logo-spin {

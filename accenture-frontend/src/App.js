@@ -1,15 +1,12 @@
 import React from 'react';
-import logo from './smartphone.png';
+import Nokia from './component/Nokia';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Desafio Accenture >
-        </p>   
+        <Nokia />
       </header>
     </div>
   );
