@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import logo from '../smartphone.png';
+import axios from 'axios';
 
 import api from '../services/api';
 
@@ -8,16 +9,27 @@ export default function Nokia() {
   const [message, setMessage] = useState('');
   const [convertedMsg, setConvertedMsg] = useState('');
 
+  var teste;
+
   async function handleSubmit() {
-    console.log(message);
-    api.get('/texto', {
-      data:{"texto": {message}}
-    }).then(res => {
-      const convertedMsg = res.data;
-      console.log(convertedMsg)
-    });
+    
+    let configObject = {
+      "url": "http://localhost:3333/texto",
+      "method": "post",
+      "headers": {
+      'Content-Type': 'application/json'
+    },
+      "data":{
+        "message": message
+      }
   }
 
+    axios.request(configObject).then((res) => {
+      console.log("react2: ", res.data);
+      setConvertedMsg(res.data.message);
+    })
+
+  }
 
   return (
     <div className="Wrapper">
@@ -48,6 +60,7 @@ export default function Nokia() {
           <button onClick={() => setMessage(prevMsg => prevMsg + ' ')}>0 <span>[ _ ]</span></button>
           <button onClick={() => setMessage(prevMsg => prevMsg + 'H')}>H <span>[#]</span></button>
         </div>
+
       </div>
     </div>
   )
