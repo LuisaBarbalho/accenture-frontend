@@ -16,6 +16,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  font-size: 22px;
 
 }
 
@@ -37,7 +38,12 @@
   background: #69be80;
 }
 
-.Input {}
+.Input {
+  text-align: left;
+  padding-left: 16px;
+}
+
+/* Buttons */
 
 .Enter {
   position: absolute;
@@ -53,6 +59,15 @@
   padding-top: 10px;
   font-weight: bold;
   padding: 0;
+}
+
+.Clear {
+  position: absolute;
+  top: 440px;
+  left: 140px;
+  background-color: transparent;
+  border: none;
+  rotate: ;
 }
 
 .Container {

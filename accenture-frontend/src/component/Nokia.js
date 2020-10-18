@@ -9,7 +9,9 @@ export default function Nokia() {
   const [message, setMessage] = useState('');
   const [convertedMsg, setConvertedMsg] = useState('');
 
-  var teste;
+  function handleClear() {
+    setMessage('');
+  }
 
   async function handleSubmit() {
     
@@ -23,12 +25,10 @@ export default function Nokia() {
         "message": message
       }
   }
-
     axios.request(configObject).then((res) => {
       console.log("react2: ", res.data);
       setConvertedMsg(res.data.message);
     })
-
   }
 
   return (
@@ -36,9 +36,10 @@ export default function Nokia() {
       <img src={logo} className="Nokia" alt="logo" />
       <div className="Screen">
         <p className="Input">Input: {message}</p>
-        Message: {convertedMsg}
+        <p className="Input">Message: {convertedMsg}</p>
       </div>
       <button className="Enter" onClick={handleSubmit}>Enter</button>
+      <button className="Clear" onClick={handleClear}>Limpar</button>
       <div className="Container">
         <div className="Row">
           <button onClick={() => setMessage(prevMsg => prevMsg + '1')}>1</button>
